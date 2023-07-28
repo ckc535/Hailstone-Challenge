@@ -1,4 +1,4 @@
-NOTE: RUN BE => FE
+NOTE: RUN BE first => FE
 
 
 
