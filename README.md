@@ -1,6 +1,6 @@
 NOTE: RUN BE first => FE
 
-
+docs api: 127.0.0.1/8002/docs (swagger)
 
 
 How much time did you spend on the challenge?
