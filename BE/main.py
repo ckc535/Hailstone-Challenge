@@ -3,6 +3,7 @@ from web3 import Web3
 from web3.middleware import geth_poa_middleware
 from fastapi.middleware.cors import CORSMiddleware
 from model.token_model import TokenEvent,TokenFee
+import uvicorn
 
 
 app = FastAPI(
@@ -123,3 +124,6 @@ async def get_token_fee(token: str,minute: int = 0):
             fee = dict(dict(event)['args'])['toAmount'] * 0.0001
             total_fee += fee
     return {"token": token,"token_address":token_address,"pool_address":"0x312Bc7eAAF93f1C60Dc5AfC115FcCDE161055fb0","total_fee":web3.fromWei(total_fee,'ether')}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8002)
